@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+
 app.use(express.static('public'));
 app.use(express.json());
 const connectDB = require('./config/db');
@@ -18,6 +18,7 @@ app.use('/api/files', require('./routes/files'))
 app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download')); 
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT,() =>{
 console.log(`Listening on port ${PORT}`);
-})
+});
