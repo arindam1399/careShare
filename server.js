@@ -18,6 +18,10 @@ app.use('/api/files', require('./routes/files'))
 app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download')); 
 
+app.get('/', (req, res) => {
+  res.send('Welcome to CareShare! Backend is running 🎉');
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,() =>{
 console.log(`Listening on port ${PORT}`);
